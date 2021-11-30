@@ -1,0 +1,155 @@
+html, body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure {
+  margin: 0;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 2% 0;
+}
+
+header > div {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+header > div h1 a {
+  font-size: 0;
+  width: 93px;
+  height: 36px;
+  background: url("../img/logo.png") no-repeat;
+  display: block;
+}
+
+header > div nav a {
+  color: #fff;
+  padding: 0 24px;
+  display: inline-block;
+}
+
+footer {
+  padding: 3% 0%;
+  text-align: center;
+}
+
+main ul {
+  display: block;
+}
+
+.md {
+  width: 800px;
+  height: 500px;
+}
+
+.Services {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.Services h2 {
+  font-size: 54px;
+}
+
+.Services > p {
+  margin: 1% 0 5%;
+}
+
+.Services ul {
+  width: 70%;
+  margin: 60px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.Services ul li {
+  width: 30%;
+}
+
+.Services ul li::before {
+  content: '';
+  width: 53px;
+  height: 53px;
+  display: block;
+  margin: 5% auto;
+}
+
+.Services ul li b {
+  font-weight: bold;
+}
+
+.Services ul li p {
+  color: #555;
+  line-height: 160%;
+  margin-top: 2%;
+}
+
+.Services ul li:nth-child(1)::before {
+  background: url("../img/ic_01.png") no-repeat;
+}
+
+.Services ul li:nth-child(2)::before {
+  background: url("../img/ic_02.png") no-repeat;
+}
+
+.Services ul li:nth-child(3)::before {
+  background: url("../img/ic_03.png") no-repeat;
+}
+/*# sourceMappingURL=sub.css.map */

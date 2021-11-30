@@ -1,0 +1,143 @@
+@import url('../commom.css');
+
+$point-color : rgb(248, 204, 8);
+$content-width :70%
+$title : 54px;
+
+@mixin flex($just,$items,$dir,$wrap){
+    display: flex; justify-content: $jus;
+    align-items: $items; flex-direction: $dir;
+    flex-wrap: $wrap;
+}
+@mixin btn {
+    display: inline-block;
+    padding: 15px 30px;
+    color: #fff;
+    background: $point-color;
+}
+
+
+header {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%;
+    padding: 2% 0;
+
+    > div {
+        width: $content-width; margin:0 auto;
+        @include flex(space-between, center,0,0);
+
+        h1 {
+            a {
+                font-size: 0;
+                width: 93px; height: 36px;
+                background: url('../img/logo.png') no-repeat;
+                display: block;
+            }
+        }
+        nav {
+            a {
+                color: #fff; padding: 20px;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+main {}
+.visual {
+    width: 100%; height: 100vh;
+   // overflow: hidden;
+    > img {
+        width: 100%; height: 100%;
+       
+    }
+    > div {
+        position:absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+
+        h2 {
+            //white-space: nowrap;
+            font-size: 4rem;
+            white-space: pre-line;
+            text-align: center;
+            transform: translateY(100%);
+            opacity: 0;
+            animation: spot-text 1s forwards;
+            small {
+                //display: block;
+                font-size: 2rem;
+                font-weight: normal;
+            }
+        }
+        a {
+            @include btn;
+            transform: translateY(100%);
+            opacity: 0;
+            animation: spot-text 1s .5s forwards;
+        }
+        @keyframes spot-text {
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.work {background: gray; padding: 100px 0; text-align: center;
+
+    @include h2;
+
+   // h2 {font-size: $title;}
+  //  p {margin: 1% 0 5%;}
+    ul {width: $content-width; margin: 0 auto; 
+        @include flex(space-between,0,0,wrap);
+        li {width: 30%; list-style: none; margin-bottom: 2%;
+            p {}
+            p > img {width: 100%;}
+            p > small {
+                display: block; font-weight: normal;
+            }
+            p:nth-of-type(2){
+                background-color: #fff;
+                padding: 10%; font-weight: bold;}
+            }
+
+    
+
+
+.banner {text-align: center; padding: $p100; margin: 0 2%;
+    a {display: inline-block; width: 200px; height: 60px;
+        background: url('../img/bn_01.jpg') 0 0 / 100% no-repeat;
+    font-size: 0;}
+    }
+$bn : (
+    1:'../img/bn_01.jpg',
+    2:'../img/bn_02.jpg',
+    3:'../img/bn_03.jpg',
+    4:'../img/bn_04.jpg');
+
+@each $key, $value in $bn{
+a:nth-of-type(#{$key}){
+    background: url(#{$value}) 0 0 / 100% no-repeat;
+    }
+    
+}
+
+.contact {text-align: center; padding: 5%; background-color: #222;
+
+    h2 {font-size: $title; color: #fff;}
+    div {margin-top: 1%;
+        input {width: 20%; padding: 15px; vertical-align: middle;}
+        a { vertical-align: middle;
+            @include btn;}
+    }
+
+
+
+
+
+footer {padding: 0 3%; text-align: center;}

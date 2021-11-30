@@ -1,0 +1,188 @@
+@import '_common.scss';
+
+main {
+    ul {display: block;}
+}
+
+
+.md {width: 800px; height: 500px;}
+
+
+.Services {
+    padding: 100px 0;
+    text-align: center;
+    @include h2;
+
+    ul {
+        width: $content-width;
+        margin: 60px auto;
+        @include flex(space-between,flex-start,row,nowrap);
+        li {    
+            width: 30%;        
+            &::before {
+                content: '';
+                width: 53px; height: 53px;
+                display: block;
+                margin: 5% auto;
+            }
+            b {font-weight: bold;}
+            p {
+                color: #555; line-height: 160%;
+                margin-top: 2%;
+            }
+        }
+        li:nth-child(1)::before {
+            background: url('../img/ic_01.png') no-repeat;
+        }
+        li:nth-child(2)::before {
+            background: url('../img/ic_02.png') no-repeat;
+        }
+        li:nth-child(3)::before {
+            background: url('../img/ic_03.png') no-repeat;
+        }
+    }   
+
+}
+
+.about {
+    padding: $p100;
+    background: #f2f2f1;
+
+    .profile {
+    width: $content-width;
+    margin: 0 auto;
+    @include flex(space-between,center,row,nowrap);
+
+    .left {width: 40%;}
+    .right {
+        width: 50%;
+        @include h2;
+        ul {
+            li {}
+            li > p {background: #ddd;}
+            li > p > span {
+                background: #fde136;
+                color: #fff;
+                text-align: right;
+                display: block;
+                padding: 1%;
+            }
+            $skill : (1:90%,2: 70%, 3:10%, 4:40%);
+            @each $k, $v in $skill{
+                li:nth-child(#{$k}) > p > span {width: $v}
+            }
+           // li:nth-child(1) > p > span {width: 90%;}
+           // li:nth-child(2) > p > span {width: 70%;}
+           // li:nth-child(3) > p > span {width: 10%;}
+           // li:nth-child(4) > p > span {width: 40%;}
+        }
+    }
+
+    }   
+
+}
+
+$mobile : 320px;
+$tablet-w : 767px;
+$tablet-h : 1024px;
+
+@mixin media($min, $max){
+    @media (min-width: $min) and (max-width: $max){
+        @content;
+    }
+}
+
+@import '_media';
+
+
+//--------------------- mobile----------------------
+@include media($mobile,$tablet-w){
+    $title : 34px !global;
+    $p100 : 40px 0 !global;
+
+    .visual > img {width: 100%;}
+    
+    .Services {
+        padding: 100px 0;
+        text-align: center;
+        @include h2;
+
+        ul {
+            width: $content-width;
+            margin: 60px auto;
+            @include flex(space-between,flex-start,column,nowrap);
+            li {    
+                margin-bottom: 40px;
+                
+                width: 100%;        
+                &::before {
+                    content: '';
+                    width: 53px; height: 53px;
+                    display: block;
+                    margin: 5% auto;
+                }
+                b {font-weight: bold;}
+                p {
+                    color: #555; line-height: 160%;
+                    margin-top: 2%;
+                }
+            }
+            li:nth-child(1)::before {
+                background: url('../img/ic_01.png') no-repeat;
+            }
+            li:nth-child(2)::before {
+                background: url('../img/ic_02.png') no-repeat;
+            }
+            li:nth-child(3)::before {
+                background: url('../img/ic_03.png') no-repeat;
+            }
+        }   
+
+    }
+
+    .about {
+        padding: $p100;
+        background: #f2f2f1;
+
+        .profile {
+        width: $content-width;
+        margin: 0 auto;
+        @include flex(space-between,center,column,nowrap);
+
+        .left {
+            width: 100%;
+            img{width: 100%;} 
+        }
+
+        .right {
+            width: 100%;
+            @include h2;
+            ul {
+                li {}
+                li > p {background: #ddd;}
+                li > p > span {
+                    background: #fde136;
+                    color: #fff;
+                    text-align: right;
+                    display: block;
+                    padding: 1%;
+                }
+                $skill : (1:90%,2: 70%, 3:10%, 4:40%);
+                @each $k, $v in $skill{
+                    li:nth-child(#{$k}) > p > span {width: $v}
+                }
+            // li:nth-child(1) > p > span {width: 90%;}
+            // li:nth-child(2) > p > span {width: 70%;}
+            // li:nth-child(3) > p > span {width: 10%;}
+            // li:nth-child(4) > p > span {width: 40%;}
+            }
+        }
+
+        }   
+
+    }
+
+
+
+
+}

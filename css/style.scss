@@ -1,0 +1,11 @@
+@import '_common.scss'
+
+margin: 0 auto;
+padding: 0;
+li {list-style: none;}
+
+.Services {
+    padding: 100px 0;
+    text-align: center;
+    @include h2;
+}
